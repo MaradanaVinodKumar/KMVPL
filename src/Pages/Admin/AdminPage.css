@@ -55,6 +55,44 @@
   max-height: 100%;
 }
 
+.datePicker {
+  padding: 10px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.SelectYear,
+.SelectMonth {
+  font-weight: bold;
+}
+.scrollable-months::-webkit-scrollbar {
+  display: none;
+}
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #d4d4d4;
+  font-family: Urbanist;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: 0.64px;
+}
+.months_font{
+  color: #d4d4d4;
+  font-family: Urbanist;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: 0.64px;
+}
+
 .upload-container label {
   cursor: pointer;
 }
@@ -69,12 +107,11 @@
   flex-shrink: 0;
   margin: 0 auto;
   margin-bottom: 50px;
-
 }
 
 .dashed-container {
   /* border: 2px dashed #ccc; */
- 
+
   padding: 20px;
   width: 100%;
   height: 540px;
@@ -97,89 +134,77 @@
   max-width: 400px; /* Adjust max-width if needed */
   margin: 0 auto; /* This centers the container horizontally */
   text-align: center;
-  
 }
 
-.dashed-container-preview-bg{
+.dashed-container-preview-bg {
   border: 0px solid;
   height: 100%;
   padding: 30px;
 }
-.dashed-container-preview-body{
+.dashed-container-preview-body {
   border: 0px solid;
   height: 85%;
   border-radius: 20px;
-  
+
   background-color: white;
   overflow: hidden;
   overflow-y: scroll;
   overflow-x: hidden;
- 
-  
 }
-.dashed-container-Buttons{
+.dashed-container-Buttons {
   text-align: right;
   padding-top: 10px;
 }
-.uploadButton{
-  
-  padding: 12px 30px ;
+.uploadButton {
+  padding: 12px 30px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 30px;
- 
+
   color: #ffffff;
-  background-color: var(--Brand-color, #EA6A06);;
-  
+  background-color: var(--Brand-color, #ea6a06);
+
   font-family: Urbanist;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 130%; /* 26px */
   letter-spacing: 0.4px;
-
-  
-
 }
-.dateForUpload{
- 
-  padding: 12px 30px ;
+.dateForUpload {
+  padding: 12px 30px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 30px;
   border: 2px solid;
-  color: #1A1A1A;
+  color: #1a1a1a;
   background-color: transparent;
-  
-font-family: Urbanist;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: 130%; /* 26px */
-letter-spacing: 0.4px;
-margin-right: 20px;
-position: relative;
 
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 26px */
+  letter-spacing: 0.4px;
+  margin-right: 20px;
+  position: relative;
 }
-
 
 .dateForUpload::-webkit-calendar-picker-indicator {
   border: 0px solid;
-  
+
   width: 100%;
   background-color: transparent;
   position: absolute;
   cursor: pointer;
   padding-left: 150%;
-  
-  
 }
 
-.PreviewImage{
+.PreviewImage {
   height: 150px;
   width: 160px;
   background-repeat: no-repeat;
@@ -190,21 +215,21 @@ position: relative;
   border: 0px solid;
   background-color: rgb(243, 241, 241);
 }
-.deleteButton{
+.deleteButton {
   float: right;
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
   color: black;
-  height:35px;
+  height: 35px;
   width: 35px;
   text-align: center;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 600;
   cursor: pointer;
 }
-.deleteButton:hover{
+.deleteButton:hover {
   background-color: rgb(255, 183, 183);
 }
 .upload-container label {

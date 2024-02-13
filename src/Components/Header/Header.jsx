@@ -36,7 +36,7 @@ const Header = () => {
           </li>
           <li className="user">
             <NavLink to="/SignIn" activeClassName="active" className="links">
-              <button className="signIn_btn">
+              <button className="signIn_icon">
                 <FontAwesomeIcon icon={faUser} />
               </button>
             </NavLink>

@@ -75,6 +75,7 @@
   font-weight: 500;
   line-height: 130%; /* 78px */
   letter-spacing: 1.2px;
+  margin-top: 5vh !important;
 }
 .navlink {
   text-decoration: none !important;
@@ -115,52 +116,12 @@
   color: white;
   z-index: 2;
 }
-
-@media screen and (min-width: 1280px) and (max-width: 1680px) {
-  .grid_container {
-    margin-top: 0vh !important;
-  }
+.grid_container {
+  margin-top: 10vh !important;
+  margin-bottom: 5vh !important;
 }
 
-@media screen and (max-width: 1280px) {
-  .about {
-    font-size: 56px; /* Adjust font size */
-    margin-top: -20vh;
-  }
-  .about_image {
-    width: 100%;
-    height: 80%;
-    margin-top: 0;
-    position: relative;
-    top: -45%;
-  }
-  .projectName {
-    font-size: 24px; /* Adjust font size */
-  }
-  .grid {
-    margin-top: -60vh;
-  }
-  .grid_container {
-    padding: 0;
-  }
-  .para {
-    font-size: 16px; /* Adjust font size */
-    width: 100%; /* Adjust width */
-  }
-
-  .sub_text {
-    font-size: 16px; /* Adjust font size */
-  }
-
-  .gallery_btn {
-    font-size: 20px; /* Adjust font size */
-    padding: 20px 20px; /* Adjust button padding */
-  }
-  .grid {
-  }
-}
-
-@media screen and (max-width: 1028px) {
+@media screen and (min-width: 768px) and (max-width: 1028px) {
   .background-video-container {
     height: 100vh; /* Adjust height */
   }
@@ -192,14 +153,7 @@
     font-size: 20px; /* Adjust font size */
     padding: 20px 20px; /* Adjust button padding */
   }
-  .grid {
-    margin-top: -70vh;
-    margin-bottom: -20vh;
-    margin-left: 10px;
-  }
-  .footer {
-    margin-top: -28vh;
-  }
+
   .about_image {
     width: 100%;
     height: 80%;
@@ -240,14 +194,16 @@
     padding: 20px 20px; /* Adjust button padding */
   }
   .grid {
-    margin-top: 60vh !important;
+    margin-top: -5vh !important;
     margin: 2vh;
   }
   .about_image {
-    margin-top: 35vh !important;
+    width: "100%" !important;
+    height: "60%" !important;
   }
+
   .footer {
-    margin-top: 30vh;
+    margin-top: 15vh;
   }
 }
 
@@ -261,7 +217,6 @@
     padding: 16px 16px; /* Adjust button padding */
   }
   .grid {
-    margin-top: 75vh !important;
     margin: 2vh;
   }
   .about_image {
@@ -269,17 +224,16 @@
     height: "20%" !important;
   }
   .footer {
-    margin-top: 43vh;
+    margin-top: 18vh;
   }
 }
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
   .grid {
-    margin-top: 100vh !important;
     margin: 2vh;
   }
   .footer {
-    margin-top: 63vh;
+    margin-top: 13vh;
   }
 }
 @media screen and (min-width: 200px) and (max-width: 300px) {
@@ -300,10 +254,6 @@
   }
   .about {
     font-size: 36px; /* Adjust font size */
-    margin-top: 48vh !important;
-  }
-  .footer {
-    margin-top: 65vh;
   }
 
   .about {

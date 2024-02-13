@@ -68,7 +68,7 @@ nav ul li a.active::after {
   line-height: 130%; /* 31.2px */
   letter-spacing: 0.48px;
 }
-.signIn_btn {
+.signIn_icon {
   display: flex;
   width: 60px;
   height: 60px;

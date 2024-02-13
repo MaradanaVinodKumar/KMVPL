@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+
   flex-direction: row;
 }
 
@@ -39,7 +39,7 @@
 
 .signin-form {
   margin-top: 20px;
-margin-left: -2rem !important;
+  margin-left: -2rem !important;
 }
 
 .header {
@@ -103,12 +103,11 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
-
-@media only screen and (min-device-width: 1280px) and (max-device-width: 1558px) {
+@media only screen and (min-device-width: 1380px) and (max-device-width: 1558px) {
   .image_sign {
     border-radius: 8px;
-    width: 604px;
-    height: 504px;
+    width: 504px !important;
+    height: 504px !important;
     flex-shrink: 0;
   }
   input[type="text"],
@@ -122,13 +121,12 @@ input[type="checkbox"] {
   }
   .signInForm {
     margin-bottom: 3vh;
-
   }
 }
-@media only screen and (min-device-width: 1128px) and (max-device-width: 1280px) {
+@media only screen and (min-device-width: 1028px) and (max-device-width: 1380px) {
   .image_sign {
     border-radius: 8px;
-    width: 584px;
+    width: 30rem;
     height: 504px;
     flex-shrink: 0;
   }
@@ -142,11 +140,10 @@ input[type="checkbox"] {
     border: 1px solid #cfc7c7;
   }
   .signInForm {
-    margin-bottom: 3vh;
-    margin-left: 0% !important;
+    margin-left: -8vh !important;
   }
 }
-@media only screen and (min-device-width: 767px) and (max-device-width: 1058px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1028px) {
   .container {
     flex-direction: column;
     display: flex;
@@ -155,24 +152,26 @@ input[type="checkbox"] {
   }
   .image_sign {
     border-radius: 8px;
-    width: 100%;
-    height: 90%;
-    flex-shrink: 0;
-    margin-top: 5vh;
-  }input[type="text"],
+    width: 400px !important;
+    height: 404px !important;
+  }
+  input[type="text"],
   input[type="password"] {
-    width: 370px;
-    height: 50px;
+    width: 300px !important;
+    height: 35px !important;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #cfc7c7;
-    
-  }.signin-form{
-    margin-left: -4vh;
+  }
+  .signInForm {
+    margin-left: -10vh !important;
+  }
+  .footer_div {
+    margin-bottom: 0 !important;
   }
 }
-@media screen and (min-width: 580px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .container {
     flex-direction: column;
     display: flex;
@@ -181,11 +180,12 @@ input[type="checkbox"] {
   }
   .image_sign {
     border-radius: 8px;
-    width: 100%;
+    width: 80%;
     height: 90%;
-    flex-shrink: 0;
+    margin-left: 7vh;
     margin-top: 5vh;
-  }input[type="text"],
+  }
+  input[type="text"],
   input[type="password"] {
     width: 370px;
     height: 50px;
@@ -193,8 +193,74 @@ input[type="checkbox"] {
     margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #cfc7c7;
-    
-  }.signin-form{
-    margin-left: -4vh;
+  }
+  .signInForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
   }
 }
+
+@media screen and (min-width: 368px) and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image_sign {
+    border-radius: 8px;
+    width: 80%;
+    height: 90%;
+    margin-left: 5vh;
+    margin-top: 5vh;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 280px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cfc7c7;
+  }
+  .signInForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
+  .sign_btn {
+    padding: 10px 24px 10px 24px;
+  }
+}
+@media screen and (min-width: 228px) and (max-width: 368px) {
+ 
+  .image_sign {
+    border-radius: 8px;
+    width: 90%;
+    height: 100%;
+  
+    margin-top: 5vh;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 240px;
+    height: 35px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cfc7c7;
+  }
+  .signInForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
+  .sign_btn {
+    padding: 10px 24px 10px 24px;
+  }
+}
+

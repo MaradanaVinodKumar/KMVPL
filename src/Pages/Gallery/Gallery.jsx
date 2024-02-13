@@ -5,13 +5,10 @@ import Footer from "../../Components/Footer/Footer";
 import MonthWiseImages from "../../Components/Gallery/MonthWiseImages";
 
 function getNextMonth(prevDate) {
-  console.log(prevDate);
   var preDate = new Date(prevDate + "-30");
   if (preDate.getMonth() - 1 >= 0) {
-    console.log(preDate.getMonth() - 1, preDate.getFullYear());
     return preDate.getFullYear() + "-" + (preDate.getMonth() - 1);
   } else {
-    console.log(preDate.getMonth() + 11, preDate.getFullYear() - 1);
     return preDate.getFullYear() - 1 + "-" + (preDate.getMonth() + 12);
   }
 }
@@ -19,28 +16,33 @@ function getNextMonth(prevDate) {
 const Gallery = () => {
   const today = new Date();
   const year = today.getFullYear();
-  const month = (today.getMonth() + 1).toString().padStart(2, "0"); // Add leading zero if needed
-  const formattedDate = `${year}-${month}`;
+  const month = (today.getMonth() + 1).toString().padStart(2, "0");
 
-  console.log(formattedDate);
-  const [getSelectedDate, setSelectedDate] = useState(formattedDate);
-  const [getFormatedDates, setFormatedDates] = useState([formattedDate]);
+  const [selectedYear, setSelectedYear] = useState(year);
+  const [selectedMonth, setSelectedMonth] = useState(month);
+  const [getFormatedDates, setFormatedDates] = useState([
+    `${selectedYear}-${selectedMonth}`,
+  ]);
   const [MonthsCount, setMonthsCount] = useState(0);
+  const [showMonths, setShowMonths] = useState(false); // To toggle display of months
 
   const viewMore = () => {
-    console.log("clicked");
-    console.log(getNextMonth(getFormatedDates[MonthsCount]));
     setFormatedDates((prevDates) => [
       ...prevDates,
-      getNextMonth(getFormatedDates[MonthsCount]),
+      getNextMonth(prevDates[MonthsCount]),
     ]);
     setMonthsCount(MonthsCount + 1);
   };
 
-  const ChangesDate = (e) => {
-    setSelectedDate(e.target.value);
+  const handleYearChange = (e) => {
+    setSelectedYear(e.target.value);
+    setMonthsCount(0);
+    setShowMonths(true); // Show months when year changes
+  };
 
-    setFormatedDates((preDate) => [e.target.value]);
+  const handleMonthChange = (e) => {
+    setSelectedMonth(e.target.value);
+    setFormatedDates([`${selectedYear}-${e.target.value}`]);
     setMonthsCount(0);
   };
 
@@ -50,36 +52,61 @@ const Gallery = () => {
         <Row>
           <Col md={3} className="mb-3">
             <Col className="datePicker">
-              <span className="SelcetMonth">Select Month</span>
+             
               <br />
-              <input
-                id="bday-month"
-                type="month"
-                name="bday-month"
-                CalendarIcon={false}
-                value={getSelectedDate}
-                min="2023-12"
-                max={formattedDate}
-                onChange={(e) => {
-                  ChangesDate(e);
-                  console.log(e.target.value);
-                }}
-              />
+              <select
+                value={selectedYear}
+                onChange={handleYearChange}
+                className="select"
+              >
+                {Array.from({ length: 10 }, (_, i) => year - i).map((yearValue) => (
+                  <option 
+                    key={yearValue} 
+                    value={yearValue} 
+                    className={yearValue === parseInt(selectedYear) ? 'active' : ''}
+                  >
+                    {yearValue}
+                  </option>
+                ))}
+              </select>
+              <br />
+              {showMonths && (
+                <div
+                  className="scrollable-months"
+                  style={{ maxHeight: "150px", overflowY: "auto" }}
+                >
+                  {/* Display all twelve months */}
+                  <Row>
+                    {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                      (month) => (
+                        <Col key={month} xs={12}>
+                          <button
+                            className={`btn btn-light w-100 mb-2 months_font ${parseInt(selectedMonth) === month ? 'active' : ''}`}
+                            value={month.toString().padStart(2, "0")}
+                            onClick={handleMonthChange}
+                          >
+                            {new Date(selectedYear, month - 1).toLocaleString(
+                              "default",
+                              { month: "long" }
+                            )}
+                          </button>
+                        </Col>
+                      )
+                    )}
+                  </Row>
+                </div>
+              )}
             </Col>
           </Col>
           <Col md={9} className="GalleryCol">
             {/* Gallery */}
-
-            {getFormatedDates.map((FormatedDate) => {
-              return (
-                <MonthWiseImages
-                  FormatedDate={FormatedDate}
-                  onSelect={() => {
-                    viewMore();
-                  }}
-                />
-              );
-            })}
+            {getFormatedDates.map((FormatedDate) => (
+              <MonthWiseImages
+                key={FormatedDate}
+                FormatedDate={FormatedDate}
+                onSelect={viewMore}
+              />
+            ))}
           </Col>
         </Row>
       </Container>

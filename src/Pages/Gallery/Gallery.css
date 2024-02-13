@@ -14,6 +14,45 @@
 }
 
 /* Month Buttons */
+
+.datePicker {
+  padding: 10px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.SelectYear,
+.SelectMonth {
+  font-weight: bold;
+}
+.scrollable-months::-webkit-scrollbar {
+  display: none;
+}
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #d4d4d4;
+  font-family: Urbanist;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: 0.64px;
+}
+.months_font{
+  color: #d4d4d4;
+  font-family: Urbanist;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: 0.64px;
+}
+/* Month Buttons */
 .scrollable-months {
   display: flex;
   flex-wrap: wrap;
