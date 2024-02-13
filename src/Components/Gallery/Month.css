@@ -72,3 +72,10 @@
   margin-bottom: 30px;
   margin-left: 20px; /* Adjust the value as needed */
 }
+.bigImage{
+  height: 80%;
+  width: 100%;
+ background-size: cover;
+}
+
+

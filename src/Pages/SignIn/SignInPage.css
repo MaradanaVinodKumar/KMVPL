@@ -5,6 +5,7 @@
   height: 100vh;
   flex-direction: row;
 }
+
 .signIn_label {
   color: #1a1a1a;
   font-family: Urbanist;
@@ -17,6 +18,7 @@
 .left-section {
   flex: 1;
   padding: 20px;
+  margin-left: -15vh;
 }
 
 .right-section {
@@ -25,14 +27,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 20vh;
 }
 
 .image_sign {
-  max-width: 944px;
-  max-height: 854px;
-  flex-shrink: 0;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 804px;
+  height: 704px;
+  flex-shrink: 0;
 }
 
 .signin-form {
@@ -65,11 +67,11 @@
   align-items: center;
   gap: 10px;
   border-radius: 60px;
-  background: #2350a2;
+  background: var(--Brand-color, #ea6a06);
   margin-top: 20px;
 }
 button {
-  background-color: #007bff;
+  background-color: #ea6a09;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -80,9 +82,9 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ea6a09;
 }
-.error{
+.error {
   color: red;
 }
 
@@ -100,21 +102,89 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1528px) {
+  .image_sign {
+    border-radius: 8px;
+    width: 604px;
+    height: 504px;
+    flex-shrink: 0;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 420px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cfc7c7;
+  }
+  .signInForm {
+    margin-bottom: 3vh;
+  }
+}
+@media only screen and (min-device-width: 1028px) and (max-device-width: 1280px) {
+  .image_sign {
+    border-radius: 8px;
+    width: 504px;
+    height: 404px;
+    flex-shrink: 0;
+    margin-top: 5vh;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 420px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cfc7c7;
+  }
+  .signInForm {
+    margin-bottom: 3vh;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1028px) {
   .container {
     flex-direction: column;
-  }
-
-  .right-section {
-    display: none;
-  }
-
-  .footer {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  .footer .right-section {
-    margin-top: 10px;
+  .image_sign {
+    border-radius: 8px;
+    width: 504px;
+    height: 404px;
+    flex-shrink: 0;
+    margin-top: 5vh;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 420px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #cfc7c7;
+  }
+  .signInForm {
+    margin-bottom: 3vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image_sign {
+    border-radius: 8px;
+    width: 100%;
+    height: 90%;
+    flex-shrink: 0;
+    margin-top: 5vh;
   }
 }

@@ -76,7 +76,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <div className="sec_div">
+          <div className="third_div">
             <div>
               <div
                 style={{

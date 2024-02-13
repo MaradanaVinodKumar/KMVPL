@@ -3,10 +3,11 @@ import { imageDb } from "../../config/config";
 import { listAll, getDownloadURL, ref, deleteObject } from "firebase/storage";
 import Loading from "../../assets/Loading.gif";
 import emptyGallery from "../../assets/empty Gallery.jpg";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card, Modal, Button } from "react-bootstrap";
 import edit from "../../assets/edit.png";
 import editActive from "../../assets/editActive.png";
 import { v4 } from "uuid";
+import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa"; // Importing icons
 import "./Month.css";
 
 var monthName = [
@@ -77,8 +78,15 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
   const [getSelectedDate, setSelectedDate] = useState(FormatedDate);
   const [viewMoreVisiblity, setViewMoreVisiblity] = useState(true);
   const [editButtonClicked, setEditButtonClick] = useState(true);
-  const [editBttonShow] = useState(EditButton);
   const [reload, setReload] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = (index) => {
+    setSelectedImageIndex(index);
+    setShowModal(true);
+  };
 
   const DeleteImage = (path) => {
     var conf = "do you want to delete!";
@@ -98,10 +106,7 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
   };
 
   useEffect(() => {
-    // This code will run when the component is mounted
-    // window.scrollTo(0, 0); // Reset scroll position to the top
     setSelectedDate(FormatedDate);
-
     setViewMoreVisiblity(true);
     setLoading(false);
     var index = 0;
@@ -134,20 +139,36 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
             setLoading(true);
           }, 1000);
         }, 1000);
-        // console.log(getImages);
       });
 
     setReload(false);
   }, [getSelectedDate, FormatedDate, reload]);
+
+  // Function to open big image modal
+  const openBigImageModal = (index) => {
+    handleShowModal(index);
+  };
+
+  const handleNextImage = () => {
+    const newIndex = (selectedImageIndex + 1) % getImagesFromFireBase.length;
+    setSelectedImageIndex(newIndex);
+  };
+
+  // Updated handlePreviousImage function
+  const handlePreviousImage = () => {
+    const newIndex =
+      (selectedImageIndex - 1 + getImagesFromFireBase.length) %
+      getImagesFromFireBase.length;
+    setSelectedImageIndex(newIndex);
+  };
   return (
     <>
       <Col className="GalleryHeader">
         <h2 className="GalleryHeaderText">{getSelectedDate.slice(0, 4)}</h2>
-
         <span className="GalleryHeaderText_month">
           {monthFullName[parseInt(getSelectedDate.slice(5)) - 1]}
         </span>
-        {editBttonShow && (
+        {editButtonClicked && (
           <span style={{ float: "right" }}>
             <button
               onClick={() => setEditButtonClick((prevState) => !prevState)}
@@ -163,13 +184,13 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
       <Row>
         {isLoading ? (
           getImagesFromFireBase.length ? (
-            getImagesFromFireBase.map((imageData) => (
-              <Col key={v4()} sm={6} md={4} lg={3}>
+            getImagesFromFireBase.map((imageData, index) => (
+              <Col key={v4()} sm={5} md={6} lg={3}>
                 <Row className="imageRow">
-                  {" "}
                   <div
                     className="imageCard"
                     style={{ backgroundImage: `url("${imageData.url}")` }}
+                    onClick={() => openBigImageModal(index)} // Open big image modal on click
                   >
                     {!editButtonClicked && (
                       <span
@@ -181,13 +202,6 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
                         ╳
                       </span>
                     )}
-                    <div className="imageCardOverlay">
-                      <div className="imageCardBody">
-                        <p className="imageCardText">
-                          Date: {imageData.item._location.path_.slice(13, 25)}
-                        </p>
-                      </div>
-                    </div>
                   </div>
                 </Row>
               </Col>
@@ -220,6 +234,42 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
           </Col>
         )}
       </Row>
+
+      {/* Big Image Modal */}
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        centered
+        className="modal_container"
+      >
+        <Button
+          variant="light"
+          className="close_btn"
+          onClick={handleCloseModal}
+        >
+          <FaTimes />
+        </Button>{" "}
+        {/* Close button as icon */}
+        <Modal.Body>
+          {getImagesFromFireBase.length > 1 && (
+            <Button variant="secondary" onClick={handlePreviousImage}>
+              <FaChevronLeft />
+            </Button>
+          )}{" "}
+          {/* Previous button as icon */}
+          <img
+            src={getImagesFromFireBase[selectedImageIndex]?.url}
+            alt="Big Image"
+            className="bigImage"
+          />
+          {getImagesFromFireBase.length > 1 && (
+            <Button variant="secondary" onClick={handleNextImage}>
+              <FaChevronRight />
+            </Button>
+          )}{" "}
+          {/* Next button as icon */}
+        </Modal.Body>
+      </Modal>
     </>
   );
 }

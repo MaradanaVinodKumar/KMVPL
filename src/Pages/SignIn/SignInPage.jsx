@@ -1,10 +1,10 @@
-import { useNavigate, redirect } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import "./SignInPage.css"; // Import your CSS file for styling
-import img1 from "../../assets/sign.jpg";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "./SignInPage.css";
+import img1 from "../../assets/SignIn.jpg";
 import Footer from "../../Components/Footer/Footer";
+import { Row, Col, Container } from "react-bootstrap";
 
-// Create a context for managing authentication state
 const AuthContext = React.createContext();
 
 function AuthProvider({ children }) {
@@ -17,7 +17,7 @@ function AuthProvider({ children }) {
 
     if (username === dummyUsername && password === dummyPassword) {
       setAuthenticated(true);
-      navigate("/admin");
+      navigate("/admin"); // Navigate to admin page
     } else {
       setAuthenticated(false);
     }
@@ -33,24 +33,25 @@ function AuthProvider({ children }) {
 function PrivateRoute({ children }) {
   const { authenticated } = React.useContext(AuthContext);
 
-  return authenticated ? children : <redirect to="/signin" />;
+  return authenticated ? children : null; // Render children only if authenticated
 }
 
 function SignInPage() {
   useEffect(() => {
-    // This code will run when the component is mounted
-    window.scrollTo(0, 0); // Reset scroll position to the top
+    window.scrollTo(0, 0);
   }, []);
+
   return (
     <AuthProvider>
-      <div className="container">
-        <div className="left-section">
+      <Row>
+        <Col style={{ marginLeft: "6vh", marginTop: "10vh" }} className="signInForm">
           <SignInForm />
-        </div>
-        <div className="right-section">
+        </Col>
+        <Col>
           <img src={img1} alt="SignIn" className="image_sign" />
-        </div>
-      </div>
+        </Col>
+      </Row>
+
       <Footer />
     </AuthProvider>
   );
@@ -58,7 +59,6 @@ function SignInPage() {
 
 function SignInForm() {
   const { authenticate } = React.useContext(AuthContext);
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -85,19 +85,10 @@ function SignInForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <br />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "520px",
-        }}
-      >
-        <div>
-          <label>
-            <input type="checkbox" /> Remember me
-          </label>
-        </div>
+      <div className="checkbox-forgot">
+        <label>
+          <input type="checkbox" /> Remember me
+        </label>
         <div>
           <a href="#">Forgot Password?</a>
         </div>

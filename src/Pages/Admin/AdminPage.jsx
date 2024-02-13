@@ -90,6 +90,7 @@ const AdminPage = (props) => {
     setSelectedDate(formattedDate);
     setFormatedDates((preDate) => [formattedDate]);
     setMonthsCount(0);
+    
   };
 
   const uploadCompressed = () => {
