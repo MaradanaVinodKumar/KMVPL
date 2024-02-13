@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import image from "../../assets/home1.jpg";
+import about_image from "../../assets/about.png"
 import { NavLink } from "react-router-dom";
 import "./Home.css"; // Import CSS file for styling
 import { Row, Col, Container } from "react-bootstrap";
@@ -55,7 +56,7 @@ const Home = () => {
           <Col md={2}></Col>
           <Col md={5}>
             <img
-              src={image}
+              src={about_image}
               width="100%"
               height="60%"
               alt="Project"

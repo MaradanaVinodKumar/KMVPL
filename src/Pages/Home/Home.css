@@ -116,6 +116,12 @@
   z-index: 2;
 }
 
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+  .grid_container {
+    margin-top: 0vh !important;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .about {
     font-size: 56px; /* Adjust font size */
@@ -194,6 +200,10 @@
   .footer {
     margin-top: -28vh;
   }
+  .about_image {
+    width: 100%;
+    height: 80%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -209,7 +219,7 @@
 
   .about {
     font-size: 36px; /* Adjust font size */
-    margin-top: 10vh;
+    margin-top: 35vh;
   }
 
   .projectName {
@@ -230,52 +240,87 @@
     padding: 20px 20px; /* Adjust button padding */
   }
   .grid {
-    margin-top: 26vh !important;
+    margin-top: 60vh !important;
     margin: 2vh;
   }
   .about_image {
-    margin-top: 25vh !important;
+    margin-top: 35vh !important;
   }
   .footer {
-    margin-top: 25vh;
+    margin-top: 30vh;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
   .heading {
     font-size: calc(1.5rem + 1vw);
   }
-  .footer {
-    margin-top: 42vh;
-  }
+
   .gallery_btn {
     font-size: 20px; /* Adjust font size */
     padding: 16px 16px; /* Adjust button padding */
   }
   .grid {
-    margin-top: 35vh !important;
+    margin-top: 75vh !important;
     margin: 2vh;
+  }
+  .about_image {
+    width: "100%";
+    height: "20%" !important;
+  }
+  .footer {
+    margin-top: 43vh;
   }
 }
 
-@media screen and (max-width: 307px) {
+@media screen and (min-width: 300px) and (max-width: 400px) {
   .grid {
-    margin-top: 50vh !important;
+    margin-top: 100vh !important;
     margin: 2vh;
   }
   .footer {
     margin-top: 63vh;
   }
 }
-@media screen and (max-width: 260px) {
-  .footer {
-    margin-top: 75vh;
-  }
+@media screen and (min-width: 200px) and (max-width: 300px) {
   .gallery_btn {
     font-size: calc(1rem + 1vw); /* Adjust font size */
     padding: 9px 7px; /* Adjust button padding */
   }
   .heading {
     font-size: calc(1rem + 1vw);
+  }
+  .grid_container {
+    margin-top: -10vh !important;
+  }
+}
+@media screen and (max-width: 287px) {
+  .grid_container {
+    margin-top: 20vh !important;
+  }
+  .about {
+    font-size: 36px; /* Adjust font size */
+    margin-top: 48vh !important;
+  }
+  .footer {
+    margin-top: 65vh;
+  }
+
+  .about {
+    font-size: 26px; /* Adjust font size */
+    margin-top: 35vh;
+  }
+
+  .projectName {
+    font-size: 22px; /* Adjust font size */
+  }
+
+  .para {
+    font-size: 16px; /* Adjust font size */
+    width: 100%; /* Adjust width */
+  }
+
+  .sub_text {
+    font-size: 16px; /* Adjust font size */
   }
 }

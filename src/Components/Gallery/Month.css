@@ -72,10 +72,13 @@
   margin-bottom: 30px;
   margin-left: 20px; /* Adjust the value as needed */
 }
-.bigImage{
+.modal-image {
   height: 80%;
   width: 100%;
- background-size: cover;
+  background-size: cover;
 }
-
-
+.modal_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/footer.png";
 
 function Footer() {
   return (

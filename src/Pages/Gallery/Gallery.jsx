@@ -56,6 +56,7 @@ const Gallery = () => {
                 id="bday-month"
                 type="month"
                 name="bday-month"
+                CalendarIcon={false}
                 value={getSelectedDate}
                 min="2023-12"
                 max={formattedDate}

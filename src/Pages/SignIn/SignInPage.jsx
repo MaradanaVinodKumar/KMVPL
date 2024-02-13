@@ -43,14 +43,21 @@ function SignInPage() {
 
   return (
     <AuthProvider>
-      <Row>
-        <Col style={{ marginLeft: "6vh", marginTop: "10vh" }} className="signInForm">
-          <SignInForm />
-        </Col>
-        <Col>
-          <img src={img1} alt="SignIn" className="image_sign" />
-        </Col>
-      </Row>
+      <Container>
+        <Row>
+          <Col
+            style={{ marginLeft: "6vh", marginTop: "10vh" }}
+            className="signInForm"
+            md={4}
+          >
+            <SignInForm />
+          </Col>
+          <Col md={2}></Col>
+          <Col md={5}>
+            <img src={img1} alt="SignIn" className="image_sign" />
+          </Col>
+        </Row>
+      </Container>
 
       <Footer />
     </AuthProvider>
