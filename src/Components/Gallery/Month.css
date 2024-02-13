@@ -1,0 +1,74 @@
+.viewMore {
+  color: var(--Brand-color, #ea6a06);
+  font-family: Urbanist;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 33.8px */
+  letter-spacing: 0.52px;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+
+  position: relative;
+}
+.imageCard {
+  position: relative;
+  overflow: hidden;
+  border: none; /* Remove borders */
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.imageCardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageCard:hover .imageCardOverlay {
+  opacity: 1;
+}
+
+.imageCardBody {
+  text-align: center;
+}
+
+.imageCardText {
+  color: white;
+  font-family: "Urbanist";
+  margin: 0;
+}
+.GalleryHeaderText_month {
+  color: #1a1a1a;
+  font-family: Urbanist;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: 0.64px;
+}
+.GalleryHeaderText {
+  color: #1a1a1a;
+  font-family: Urbanist;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 52px */
+  letter-spacing: 0.8px;
+}
+/* Month.css */
+
+.imageRow {
+  margin-bottom: 30px;
+  margin-left: 20px; /* Adjust the value as needed */
+}

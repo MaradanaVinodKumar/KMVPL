@@ -1,0 +1,106 @@
+/* Header.css */
+header {
+  background-color: transparent;
+  color: #020202;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 100%;
+  margin-top: -50px;
+}
+
+.logo img {
+  width: 50px; /* Adjust the width as needed */
+  position: absolute;
+  z-index: 1;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 60px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 80px;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.links {
+  color: #010101;
+  font-family: Urbanist;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.48px;
+}
+.signIn_btn {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding: 25px 0px 24.313px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background: var(--Brand-color, #ea6a06);
+  margin-top: -10px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 80px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust the top position as needed */
+    left: 0;
+    background-color: #ffffff; /* Add background color for menu */
+    width: 100%;
+    padding: 10px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    margin-right: 20px;
+  }
+}

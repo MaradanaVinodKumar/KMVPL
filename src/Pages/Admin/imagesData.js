@@ -1,0 +1,161 @@
+const imagesData = [
+  {
+    id: 1,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2023-01-15",
+  },
+  {
+    id: 2,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-02-20",
+  },
+  {
+    id: 3,
+    url: "https://picsum.photos/200/200",
+    title: "Image 3",
+    date: "2023-03-10",
+  },
+  {
+    id: 4,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2023-04-15",
+  },
+  {
+    id: 5,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-05-20",
+  },
+  {
+    id: 6,
+    url: "https://picsum.photos/200/200",
+    title: "Image 3",
+    date: "2023-06-10",
+  },
+  {
+    id: 7,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2023-07-15",
+  },
+  {
+    id: 8,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-08-20",
+  },
+  {
+    id: 9,
+    url: "https://picsum.photos/200/200",
+    title: "Image 3",
+    date: "2023-09-10",
+  },
+  {
+    id: 10,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2023-10-15",
+  },
+  {
+    id: 11,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-12-20",
+  },
+  {
+    id: 12,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-03-10",
+  },
+  {
+    id: 13,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2023-08-15",
+  },
+  {
+    id: 14,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2023-02-20",
+  },
+  {
+    id: 15,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-10-10",
+  },
+  {
+    id: 16,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-11-10",
+  },
+
+  {
+    id: 17,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-07-15",
+  },
+  {
+    id: 18,
+    url: "https://picsum.photos/200/200",
+    title: "Image 24",
+    date: "2024-08-20",
+  },
+  {
+    id: 19,
+    url: "https://picsum.photos/200/200",
+    title: "Image 3",
+    date: "2024-09-10",
+  },
+  {
+    id: 20,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-10-15",
+  },
+  {
+    id: 21,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2024-12-20",
+  },
+  {
+    id: 22,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2024-03-10",
+  },
+  {
+    id: 23,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-08-15",
+  },
+  {
+    id: 24,
+    url: "https://picsum.photos/200/200",
+    title: "Image 2",
+    date: "2024-02-20",
+  },
+  {
+    id: 25,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-10-10",
+  },
+  {
+    id: 26,
+    url: "https://picsum.photos/200/200",
+    title: "Image 1",
+    date: "2024-11-10",
+  },
+];
+
+export default imagesData;
