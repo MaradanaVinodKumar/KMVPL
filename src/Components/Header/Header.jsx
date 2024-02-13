@@ -1,5 +1,3 @@
-// Header.js
-
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/Logo.png";
@@ -14,6 +12,10 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header>
       <div className="logo">
@@ -23,7 +25,7 @@ const Header = () => {
         <div className="menu-icon" onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
         </div>
-        <ul className={isOpen ? "open" : ""}> {/* Conditionally render navlinks */}
+        <ul className={isOpen ? "open" : ""} onClick={closeMenu}>
           <li>
             <NavLink exact to="/" activeClassName="active" className="links">
               Home

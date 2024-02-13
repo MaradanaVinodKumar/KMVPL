@@ -83,7 +83,7 @@ select {
   line-height: 130%; /* 41.6px */
   letter-spacing: 0.64px;
 }
-.months_font{
+.months_font {
   color: #d4d4d4;
   font-family: Urbanist;
   font-size: 32px;
@@ -107,6 +107,7 @@ select {
   flex-shrink: 0;
   margin: 0 auto;
   margin-bottom: 50px;
+  margin-top: 3vh;
 }
 
 .dashed-container {
@@ -154,6 +155,8 @@ select {
 .dashed-container-Buttons {
   text-align: right;
   padding-top: 10px;
+  display: flex;
+  align-items: center;
 }
 .uploadButton {
   padding: 12px 30px;
@@ -165,7 +168,7 @@ select {
 
   color: #ffffff;
   background-color: var(--Brand-color, #ea6a06);
-
+  transition: background-color 0.3s;
   font-family: Urbanist;
   font-size: 20px;
   font-style: normal;
@@ -236,9 +239,37 @@ select {
   cursor: pointer;
 }
 /* Responsive Styles */
+@media screen and (min-width: 226px) and (max-width: 576px) {
+  .uploadButton {
+    padding: 1px 10px !important;
+    margin-top: 2vh;
+    height: 4vh;
+  }
+}
 @media (max-width: 576px) {
   .Card {
     flex-basis: 100%;
+  }
+  .dashed-container-Buttons {
+    flex-direction: column;
+  }
+  .uploadButton {
+    padding: 5px 10px;
+    margin-top: 2vh;
+  }
+  .dateForUpload::-webkit-calendar-picker-indicator {
+    padding-left: 160%;
+  }
+  .dateForUpload {
+    padding: 6px 12px;
+    margin-top: 1vh;
+  }
+  .upload-container {
+    height: 580px;
+    flex-shrink: 0;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 3vh;
   }
 }
 
