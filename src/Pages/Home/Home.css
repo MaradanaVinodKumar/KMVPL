@@ -115,7 +115,7 @@
   z-index: 2;
 }
 
-@media screen and (max-width: 1228px) {
+@media screen and (max-width: 1280px) {
   .about {
     font-size: 56px; /* Adjust font size */
     margin-top: -20vh;
@@ -187,6 +187,8 @@
   }
   .grid {
     margin-top: -40vh;
+  } .footer {
+    margin-top: -30vh;
   }
 }
 
@@ -224,18 +226,21 @@
     padding: 20px 20px; /* Adjust button padding */
   }
   .grid {
-    margin-top: 20vh;
+    margin-top: 20vh !important;
+    margin: 2vh;
   }
   .about_image {
     margin-top: 25vh !important;
   }
-  .footer{
-    margin-top: 10vh;
+  .footer {
+    margin-top: 15vh;
   }
 }
 
 @media screen and (max-width: 400px) {
   .heading {
     font-size: 25px;
+  } .footer {
+    margin-top: 10vh;
   }
 }
