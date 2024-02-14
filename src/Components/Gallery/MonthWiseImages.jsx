@@ -202,6 +202,7 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
                         onClick={() => {
                           DeleteImage(imageData.item);
                         }}
+
                       >
                         ╳
                       </span>

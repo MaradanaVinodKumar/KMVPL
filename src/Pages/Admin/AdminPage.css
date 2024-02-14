@@ -231,6 +231,7 @@ select {
   align-items: center;
   font-weight: 600;
   cursor: pointer;
+  margin: 10px -2px;
 }
 .deleteButton:hover {
   background-color: rgb(255, 183, 183);
