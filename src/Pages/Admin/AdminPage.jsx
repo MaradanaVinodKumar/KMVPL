@@ -27,11 +27,11 @@ var monthName = [
 ];
 
 function getNextMonth(prevDate) {
-  const preDate = new Date(prevDate + "-30");
+  var preDate = new Date(prevDate + "-28");
   if (preDate.getMonth() - 1 >= 0) {
-    return `${preDate.getFullYear()}-${preDate.getMonth() - 1}`;
+    return preDate.getFullYear() + "-" + (preDate.getMonth());
   } else {
-    return `${preDate.getFullYear() - 1}-${preDate.getMonth() + 12}`;
+    return preDate.getFullYear() - 1 + "-" + (preDate.getMonth() + 12);
   }
 }
 

@@ -5,9 +5,9 @@ import Footer from "../../Components/Footer/Footer";
 import MonthWiseImages from "../../Components/Gallery/MonthWiseImages";
 
 function getNextMonth(prevDate) {
-  var preDate = new Date(prevDate + "-30");
+  var preDate = new Date(prevDate + "-28");
   if (preDate.getMonth() - 1 >= 0) {
-    return preDate.getFullYear() + "-" + (preDate.getMonth() - 1);
+    return preDate.getFullYear() + "-" + (preDate.getMonth());
   } else {
     return preDate.getFullYear() - 1 + "-" + (preDate.getMonth() + 12);
   }
