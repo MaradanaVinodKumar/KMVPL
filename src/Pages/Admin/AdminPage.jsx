@@ -157,7 +157,7 @@ const AdminPage = (props) => {
 
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
-    setFormattedDates([`${e.target.value}-${selectedMonth}`]);
+    // setFormattedDates([`${e.target.value}-${selectedMonth}`]);
     setMonthsCount(0);
     setShowMonths(true); // Show months when year changes
   };
@@ -277,7 +277,7 @@ const AdminPage = (props) => {
                 >
                   {/* Display all twelve months */}
                   <Row>
-                    {Array.from({ length: 12 }, (_, i) => i + 1).map(
+                    {Array.from({ length: (selectedYear == year) ? month : 12 }, (_, i) => i + 1).map(
                       (month) => (
 
                         <Col key={month} xs={12}>
