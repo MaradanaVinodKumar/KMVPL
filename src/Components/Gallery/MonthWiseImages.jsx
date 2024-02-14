@@ -172,13 +172,12 @@ function MonthWiseImages({ FormatedDate, onSelect, EditButton = false }) {
         <span className="GalleryHeaderText_month">
           {monthFullName[parseInt(getSelectedDate.slice(5)) - 1]}
         </span>
-        {editBttonShow && (
+        {EditButton && (
           <span style={{ float: "right" }}>
             <button
               onClick={() => setEditButtonClick((prevState) => !prevState)}
-              className={`${
-                editButtonClicked ? "EditButtonActive" : "EditButton"
-              }`}
+              className={`${editButtonClicked ? "EditButtonActive" : "EditButton"
+                }`}
             >
               Edit <img src={!editButtonClicked ? edit : editActive}></img>
             </button>

@@ -100,8 +100,7 @@ const AdminPage = (props) => {
       getFiles.forEach((image, index) => {
         const imageref = ref(
           imageDb,
-          `${date.getFullYear()}/${monthName[date.getMonth()]}/${
-            date + "-" + v4()
+          `${date.getFullYear()}/${monthName[date.getMonth()]}/${date + "-" + v4()
           }`
         );
         let uploadTask = uploadBytes(imageref, image).then((res) => {
@@ -257,9 +256,8 @@ const AdminPage = (props) => {
               <select
                 value={selectedYear}
                 onChange={handleYearChange}
-                className={`select ${
-                  parseInt(selectedYear) === year ? "active" : ""
-                }`}
+                className={`select ${parseInt(selectedYear) === year ? "active" : ""
+                  }`}
               >
                 {Array.from({ length: 10 }, (_, i) => year - i).map((year) => (
                   <option key={year} value={year}>
@@ -279,9 +277,8 @@ const AdminPage = (props) => {
                       (month) => (
                         <Col key={month} xs={12}>
                           <button
-                            className={`btn btn-light w-100 mb-2 months_font ${
-                              parseInt(selectedMonth) === month ? "active" : ""
-                            }`}
+                            className={`btn btn-light w-100 mb-2 months_font ${parseInt(selectedMonth) === month ? "active" : ""
+                              }`}
                             value={month.toString().padStart(2, "0")}
                             onClick={handleMonthChange}
                           >
@@ -299,12 +296,12 @@ const AdminPage = (props) => {
             </Col>
           </Col>
           <Col md={9} className="GalleryCol">
-            {getFormatedDates.map((FormatedDate) => (
+            {formattedDates.map((FormatedDate) => (
               <MonthWiseImages
                 FormatedDate={FormatedDate}
                 onSelect={viewMore}
                 EditButton={true}
-                key={v4()}
+                key={FormatedDate + "admin"}
               />
             ))}
           </Col>
