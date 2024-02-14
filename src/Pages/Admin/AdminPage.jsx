@@ -61,6 +61,8 @@ const AdminPage = (props) => {
   const [formattedDates, setFormattedDates] = useState([
     `${selectedYear}-${selectedMonth}`,
   ]);
+
+  const [MaxDate] = useState({ year: 2023, month: 12 })
   const [monthsCount, setMonthsCount] = useState(0);
 
   const viewMore = () => {
@@ -155,13 +157,14 @@ const AdminPage = (props) => {
 
   const handleYearChange = (e) => {
     setSelectedYear(e.target.value);
+    setFormattedDates([`${e.target.value}-${selectedMonth}`]);
     setMonthsCount(0);
     setShowMonths(true); // Show months when year changes
   };
 
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
-    setFormatedDates([`${selectedYear}-${e.target.value}`]);
+    setFormattedDates([`${selectedYear}-${e.target.value}`]);
     setMonthsCount(0);
   };
 
@@ -251,22 +254,23 @@ const AdminPage = (props) => {
 
         <Row>
           <Col md={3} className="mb-3">
-            <Col className="datePicker">
+            <Col className="datePicker" style={{ border: 1, borderStyle: "solid", borderColor: '#e9e4c9' }}>
               <br />
               <select
                 value={selectedYear}
                 onChange={handleYearChange}
                 className={`select ${parseInt(selectedYear) === year ? "active" : ""
                   }`}
+                style={{ border: 1, borderStyle: "solid" }}
               >
-                {Array.from({ length: 10 }, (_, i) => year - i).map((year) => (
+                {Array.from({ length: (year + 1) - MaxDate.year }, (_, i) => year - i).map((year) => (
                   <option key={year} value={year}>
                     {year}
                   </option>
                 ))}
               </select>
               <br />
-              {showMonths && (
+              {(
                 <div
                   className="scrollable-months"
                   style={{ maxHeight: "150px", overflowY: "auto" }}
@@ -275,6 +279,7 @@ const AdminPage = (props) => {
                   <Row>
                     {Array.from({ length: 12 }, (_, i) => i + 1).map(
                       (month) => (
+
                         <Col key={month} xs={12}>
                           <button
                             className={`btn btn-light w-100 mb-2 months_font ${parseInt(selectedMonth) === month ? "active" : ""
@@ -288,6 +293,7 @@ const AdminPage = (props) => {
                             )}
                           </button>
                         </Col>
+
                       )
                     )}
                   </Row>
